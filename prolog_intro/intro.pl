@@ -56,19 +56,35 @@ bobLikes(burger).
 bobLikes(salad).
 bobLikes(milk).
 
-isGood(alice, pizza).
-isGood(alice, burger).
-isGood(alice, burrito).
-isGood(alice, yogurt).
-isGood(bob, pizza).
-isGood(bob, burger).
-isGood(bob, salad).
-isGood(bob, milk).
+likes(alice, pizza).
+likes(alice, burger).
+likes(alice, burrito).
+likes(alice, yogurt).
+likes(bob, pizza).
+likes(bob, burger).
+likes(bob, salad).
+likes(bob, milk).
+likes(bill, Food) :-
+    isWarm(Food).
+likes(janet, Food) :-
+    likes(alice, Food),
+    likes(bob, Food).
+likes(mel, Food) :-
+    likes(janet, Food).
+%% likes(mel, Food) :-
+%%     likes(janet, Food). % ; likes(mel, yogurt)
+likes(mel, yogurt).
 
 relation(alice, likes, burger).
 relation(alice, likes, burrito).
 relation(alice, hates, milk).
 
+
 likesPizzaAndBurger(Person) :-
-    isGood(Person, pizza),
-    isGood(Person, burger).
+    likes(Person, pizza),
+    likes(Person, burger).
+
+between1And5Inclusive(Value) :-
+    Value >= 1,
+    Value =< 5.
+
