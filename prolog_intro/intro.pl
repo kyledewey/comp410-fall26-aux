@@ -88,3 +88,4 @@ between1And5Inclusive(Value) :-
     Value >= 1,
     Value =< 5.
 
+% FOR WEDNESDAY: show how rules execute; rules are infix structures.
