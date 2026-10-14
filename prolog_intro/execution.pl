@@ -18,3 +18,5 @@ myAppend(nil, Lst2, Lst2).
 myAppend(cons(Head, Tail), Lst2, cons(Head, Temp)) :-
     % Result = cons(Head, Temp),
     myAppend(Tail, Lst2, Temp).
+
+
